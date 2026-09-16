@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PokeDoke Menu Variation 7</title>
+</head>
+
+<style>
+* { box-sizing: border-box; }
+
+body {
+    margin: 0;
+    padding: 38px 5vw 100px;
+    font-family: Arial, Helvetica, sans-serif;
+    background:
+        radial-gradient(circle at 20% 20%, #ff9de2 0, transparent 28%),
+        radial-gradient(circle at 80% 10%, #79d9ff 0, transparent 30%),
+        linear-gradient(180deg, #eef5ff 0%, #d6d9ff 100%);
+    color: #1e1748;
+    line-height: 1.45;
+}
+
+h1 {
+    margin: 0;
+    font-size: clamp(4rem, 12vw, 9rem);
+    line-height: 0.86;
+    letter-spacing: -0.08em;
+    text-transform: uppercase;
+    color: #2e28b8;
+    text-shadow: 4px 4px 0 #ffffff, 8px 8px 0 #ff72c8;
+}
+
+h2 {
+    display: inline-block;
+    margin-top: 58px;
+    margin-bottom: 14px;
+    padding: 10px 16px;
+    background: #ffffff;
+    border: 2px solid #2e28b8;
+    border-radius: 999px;
+    box-shadow: 4px 4px 0 #2e28b8;
+    color: #2e28b8;
+    font-size: 1.2rem;
+}
+
+h3 {
+    margin-top: 30px;
+    color: #d12694;
+    font-size: 1.15rem;
+}
+
+p {
+    max-width: 900px;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: 12px;
+    max-width: 1100px;
+}
+
+li {
+    padding: 14px 16px;
+    background: rgba(255,255,255,0.78);
+    border: 2px solid #2e28b8;
+    border-radius: 14px;
+    box-shadow: 5px 5px 0 #8c84ff;
+}
+
+hr {
+    border: 0;
+    height: 12px;
+    margin: 48px 0;
+    background:
+        repeating-linear-gradient(
+            90deg,
+            #2e28b8 0 18px,
+            #ff72c8 18px 36px,
+            #79d9ff 36px 54px,
+            transparent 54px 64px
+        );
+}
+
+strong {
+    font-weight: 800;
+}
+
+@media (max-width: 650px) {
+    body { padding-left: 22px; padding-right: 22px; }
+}
+</style>
+
+<body>
+    <h1>PokeDoke</h1>
+    <h2>BUILD YOUR OWN POKE</h2>
+    <p><strong>23 South Euclid Avenue, Suite B, St. Louis, MO</strong></p>
+    <h3>1. Choose a Bowl</h3>
+    <ul>
+        <li>Mini Poke Bowl — $11.00<br>1 poke scoop, up to 3 toppings, 2 drizzles.</li>
+        <li>Small Poke Bowl — $15.50<br>2 scoops of poke.</li>
+        <li>Regular Poke Bowl — $18.50<br>3 scoops of poke.</li>
+        <li>Large Poke Bowl — $21.50<br>4 scoops of poke.</li>
+        <li>Toppings Bowl — $11.00</li>
+    </ul>
+    <h3>2. Choose Bases</h3>
+    <p><em>Select up to 2.</em></p>
+    <p>White Sushi Rice / Brown Rice / Spring Mix / Soba Noodles / Wonton Chips / No Base</p>
+    <h3>3. Choose Poke</h3>
+    <ul>
+        <li>Ahi Tuna</li>
+        <li>Salmon</li>
+        <li>Spicy Tuna</li>
+        <li>Shrimp</li>
+        <li>Chicken</li>
+        <li>Tofu</li>
+        <li>Fried Ahi Tuna +$0.50</li>
+        <li>Fried Salmon +$0.50</li>
+        <li>Tempura Shrimp +$2.50</li>
+        <li>Soft Shell Crab +$5.00</li>
+    </ul>
+    <h3>4. Mix-Ins</h3>
+    <p><em>Optional.</em></p>
+    <ul>
+        <li>Cucumbers</li>
+        <li>Onions</li>
+    </ul>
+    <h3>5. Poke Sauce</h3>
+    <p><em>Select up to 2.</em></p>
+    <ul>
+        <li>Mild</li>
+        <li>Medium</li>
+        <li>Spicy</li>
+        <li>No Spice</li>
+        <li>Gluten Free</li>
+        <li>No Sauce</li>
+    </ul>
+    <h3>6. Toppings</h3>
+    <p><em>Optional.</em></p>
+    <p>Carrots / Ginger / NEW! Pickled Cabbage-Carrots Mix / Purple Cabbage / Edamame / Seaweed Salad / Green Onions / Pineapple 🍍 / Mango / Wasabi / Corn / Crabmeat / Fried Onions / Masago</p>
+    <ul>
+        <li>Avocado +$2.00</li>
+        <li>Kim Chi +$1.50</li>
+    </ul>
+    <h3>7. Drizzles</h3>
+    <p><em>Select 1 to 3. Up to 2 may be on the side.</em></p>
+    <p>Spicy Mayo / Teriyaki Mayo / Wasabi Mayo / Eel Sauce / Gochujang / Sweet Thai Chili / Ponzu / NO DRIZZLE / ON THE SIDE</p>
+    <h3>8. Shakers</h3>
+    <p><em>Optional.</em></p>
+    <p>Sesame Seeds / Furikake / Togarashi</p>
+    <hr>
+    <h2>SIGNATURE BOWLS</h2>
+    <ul>
+        <li>PokeDoke Bowl — $18.50</li>
+        <li>Shrimptastic Bowl — $18.50</li>
+        <li>Volcano Bowl — $18.50</li>
+        <li>Cali Bowl — $16.00</li>
+    </ul>
+    <h2>CHICKEN BOWLS</h2>
+    <ul>
+        <li>King Maui Moa Bowl — $15.00</li>
+        <li>Karaage Chicken Bowl — $15.00<br>Marinated Japanese fried chicken, white rice, shredded carrots, purple cabbage, green onions and choice of drizzle.</li>
+    </ul>
+    <h2>GRILLED PLATES</h2>
+    <ul>
+        <li>Hawaiian BBQ Chicken — $15.00</li>
+        <li>Hawaiian Kalbi Short Rib — $23.00</li>
+    </ul>
+    <h2>APPETIZERS</h2>
+    <ul>
+        <li>Crab Rangoons (3) — $6.00</li>
+        <li>Gyoza (6) — $8.00</li>
+        <li>PokeDoke Wings (6) — $13.00</li>
+        <li>Sweet Thai Chili Wings (6) — $13.00</li>
+    </ul>
+    <h2>SIDES &amp; SWEETS</h2>
+    <ul>
+        <li>Shrimp Chips — $3.00</li>
+        <li>Wonton Chips — $4.50</li>
+        <li>Brown Rice (16oz) — $4.00</li>
+        <li>Brown Rice (24oz) — $5.00</li>
+        <li>White Sushi Rice (16oz) — $4.00</li>
+        <li>White Sushi Rice (24oz) — $5.00</li>
+        <li>Soft Shell Crab — $7.50</li>
+        <li>Tempura Shrimp — $5.50</li>
+        <li>Extra Topping — $1.50</li>
+        <li>Pocky — $4.50</li>
+        <li>Purple Sweet Potato Chips — $6.75</li>
+        <li>Fries — $4.00</li>
+        <li>Mochi - 8 Pieces — $6.75</li>
+    </ul>
+    <h2>DRINKS</h2>
+    <p>Bubble Tea $6.75 / Hawaiian Sun $3.00 / Soda (Pepsi) $3.50 / Perrier $3.25 / Sanpellegrino $3.50 / Jarritos $3.50 / Ramune $3.50 / Smart Water $3.50 / Japanese Green Tea $3.75 / Sweet Tea $3.00</p>
+</body>
+</html>
