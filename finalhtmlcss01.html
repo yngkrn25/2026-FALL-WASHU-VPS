@@ -90,6 +90,22 @@
             color: #ffffff;
         }
 
+        li:hover {
+            background: #1D1B19;
+            color: #D0B890;
+        }
+
+        li:active {
+            color: #1D1B19;
+            background: #D0B890;
+        }
+
+        li.selected {
+            color: #1D1B19;
+            background: #D0B890;
+            box-shadow: 4px 4px #ffffff;
+        }
+
 </style>
 
 <body>
@@ -253,5 +269,12 @@
         <li>Sweet Tea - $3.00</li>
     </ul>
 
+
+    <script>
+    document.querySelectorAll("li").forEach(item => {
+        item.onclick = () => item.classList.toggle("selected");
+    });
+    </script>
+    
 </body>
 </html>
