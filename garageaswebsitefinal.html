@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script>
+document.documentElement.classList.add("js");
+</script>
+    <title>GARAGE AS WEBSITE</title>
+    <style>
+
+h1, h2, h3, h4, h5, h6, strong, b {
+    font-weight: normal;
+}
+
+html, body, body * {
+    font-family: "clother", sans-serif;
+    font-weight: normal;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: "clother", sans-serif;
+    background: #242424;
+    color: white;
+}
+
+header {
+    padding: 30px 40px 20px;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 42px;
+}
+
+header p {
+    margin-top: 8px;
+    color: #bdbdbd;
+}
+
+.garage {
+    padding: 20px 35px 45px;
+}
+
+.parking-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+}
+
+.spot {
+    position: relative;
+    min-height: 330px;
+    padding: 20px;
+    background: #333333;
+    text-decoration: none;
+    color: white;
+    overflow: hidden;
+}
+
+.spot::before,
+.spot::after {
+    content: "";
+    position: absolute;
+    top: 18px;
+    bottom: 18px;
+    width: 3px;
+    background: #f2f0dc;
+}
+
+.spot::before {
+    left: 10px;
+}
+
+.spot::after {
+    right: 10px;
+}
+
+.spot:hover {
+    background: #3d3d3d;
+}
+
+.car {
+    height: 225px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.car img {
+    max-width: 88%;
+    max-height: 100%;
+    display: block;
+}
+
+.car-name {
+    margin-top: 14px;
+}
+
+.car-name small {
+    display: block;
+    color: #aaa;
+    margin-bottom: 5px;
+    letter-spacing: 1px;
+}
+
+.car-name h2 {
+    margin: 0;
+    font-size: 20px;
+}
+
+.car-name p {
+    margin: 6px 0 0;
+    color: #d7c58f;
+}
+
+.detail {
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.detail-image {
+    background: #303030;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+}
+
+.detail-image img {
+    width: 75%;
+    max-width: 520px;
+    display: block;
+}
+
+.detail-info {
+    padding: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.back {
+    color: #d7c58f;
+    text-decoration: none;
+    margin-bottom: 25px;
+}
+
+.detail-info h1 {
+    margin: 0 0 8px;
+    font-size: 44px;
+}
+
+.detail-info > p {
+    color: #aaa;
+    margin-bottom: 30px;
+}
+
+.spec {
+    padding: 14px 0;
+    border-top: 1px solid #555;
+}
+
+.spec:last-child {
+    border-bottom: 1px solid #555;
+}
+
+.spec span {
+    display: block;
+    color: #aaa;
+    font-size: 12px;
+    margin-bottom: 5px;
+    letter-spacing: 1px;
+}
+
+.spec strong {
+    font-size: 20px;
+}
+
+@media (max-width: 900px) {
+    .parking-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .detail {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 600px) {
+    .parking-grid {
+        grid-template-columns: 1fr;
+    }
+
+    header,
+    .garage,
+    .detail-info {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+}
+
+    
+body {
+    transition: opacity 0.45s ease;
+}
+
+html.js body {
+    opacity: 0;
+}
+
+html.js body.page-loaded {
+    opacity: 1;
+}
+
+html.js body.page-exit {
+    opacity: 0;
+}
+
+
+.car img {
+    transition: transform 0.28s ease;
+}
+
+.spot:hover .car img {
+    transform: scale(1.06);
+}
+
+.car-name {
+    min-height: 48px;
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.brand-logo {
+    display: block;
+    width: auto;
+    height: 29px;
+    max-width: 150px;
+    object-fit: contain;
+}
+
+#brand-transition {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    background: #242424;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: opacity 0.45s ease, visibility 0s linear 0.45s;
+}
+
+#brand-transition.show {
+    opacity: 1;
+    visibility: visible;
+    transition: opacity 0.45s ease;
+}
+
+#transition-logo {
+    width: 220px;
+    max-width: 42vw;
+    max-height: 100px;
+    object-fit: contain;
+    opacity: 0;
+    transform: scale(0.94);
+    transition: opacity 0.35s ease 0.18s, transform 0.35s ease 0.18s;
+}
+
+#brand-transition.show #transition-logo {
+    opacity: 1;
+    transform: scale(1);
+}
+
+</style>
+    <link rel="stylesheet" href="https://use.typekit.net/sbh1yxf.css">
+</head>
+
+<body>
+
+<header>
+    <h1>GARAGE AS WEBSITE</h1>
+    <p>CLICK A CAR TO SEE ITS SPECS.</p>
+</header>
+
+<main class="garage">
+    <div class="parking-grid">
+
+        <a class="spot" href="mclaren-765lt.html" data-logo="ALL CAR LOGO PNG/mclaren-logo.png">
+            <div class="car">
+                <img src="ALL CAR PNG/mclaren-765lt.png" alt="McLaren 765LT">
+            </div>
+            <div class="car-name">
+                <img class="brand-logo" src="ALL CAR LOGO PNG/mclaren-logo.png" alt="McLaren logo">
+            </div>
+        </a>
+
+        <a class="spot" href="ferrari-812-superfast.html" data-logo="ALL CAR LOGO PNG/ferrari-logo.png">
+            <div class="car">
+                <img src="ALL CAR PNG/ferrari-812-superfast.png" alt="Ferrari 812 Superfast">
+            </div>
+            <div class="car-name">
+                <img class="brand-logo" src="ALL CAR LOGO PNG/ferrari-logo.png" alt="Ferrari logo">
+            </div>
+        </a>
+
+        <a class="spot" href="porsche-carrera-gt.html" data-logo="ALL CAR LOGO PNG/porsche-logo.png">
+            <div class="car">
+                <img src="ALL CAR PNG/porsche-carrera-gt.png" alt="Porsche Carrera GT">
+            </div>
+            <div class="car-name">
+                <img class="brand-logo" src="ALL CAR LOGO PNG/porsche-logo.png" alt="Porsche logo">
+            </div>
+        </a>
+
+        <a class="spot" href="porsche-9911-gt3-rs.html" data-logo="ALL CAR LOGO PNG/porsche-logo.png">
+            <div class="car">
+                <img src="ALL CAR PNG/porsche-9911-gt3-rs.png" alt="Porsche 991.1 GT3 RS">
+            </div>
+            <div class="car-name">
+                <img class="brand-logo" src="ALL CAR LOGO PNG/porsche-logo.png" alt="Porsche logo">
+            </div>
+        </a>
+
+        <a class="spot" href="ferrari-488-pista.html" data-logo="ALL CAR LOGO PNG/ferrari-logo.png">
+            <div class="car">
+                <img src="ALL CAR PNG/ferrari-488-pista.png" alt="Ferrari 488 Pista">
+            </div>
+            <div class="car-name">
+                <img class="brand-logo" src="ALL CAR LOGO PNG/ferrari-logo.png" alt="Ferrari logo">
+            </div>
+        </a>
+
+        <a class="spot" href="mercedes-slr-mclaren.html" data-logo="ALL CAR LOGO PNG/mercedes-logo.png">
+            <div class="car">
+                <img src="ALL CAR PNG/mercedes-slr-mclaren.png" alt="Mercedes-Benz SLR McLaren">
+            </div>
+            <div class="car-name">
+                <img class="brand-logo" src="ALL CAR LOGO PNG/mercedes-logo.png" alt="Mercedes-Benz logo">
+            </div>
+        </a>
+
+    </div>
+</main>
+
+
+<div id="brand-transition" aria-hidden="true">
+    <img id="transition-logo" src="" alt="">
+</div>
+
+<script>
+window.addEventListener("pageshow", function () {
+    document.body.classList.add("page-loaded");
+
+    const transition = document.getElementById("brand-transition");
+    const transitionLogo = document.getElementById("transition-logo");
+
+    transition.classList.remove("show");
+    transitionLogo.style.opacity = "";
+    transitionLogo.style.transform = "";
+});
+
+document.querySelectorAll(".spot").forEach(function (link) {
+    link.addEventListener("click", function (event) {
+        event.preventDefault();
+
+        const nextPage = this.href;
+        const logoPath = this.dataset.logo;
+        const transition = document.getElementById("brand-transition");
+        const transitionLogo = document.getElementById("transition-logo");
+
+        transitionLogo.src = logoPath;
+        transition.classList.add("show");
+
+        setTimeout(function () {
+            transitionLogo.style.opacity = "0";
+            transitionLogo.style.transform = "scale(0.96)";
+        }, 1050);
+
+        setTimeout(function () {
+            window.location.href = nextPage;
+        }, 1550);
+    });
+});
+</script>
+
+</body>
+</html>

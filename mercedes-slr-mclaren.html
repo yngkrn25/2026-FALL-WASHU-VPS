@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script>
+document.documentElement.classList.add("js");
+</script>
+    <title>Mercedes-Benz SLR McLaren</title>
+    <style>
+
+h1, h2, h3, h4, h5, h6, strong, b {
+    font-weight: normal;
+}
+
+html, body, body * {
+    font-family: "clother", sans-serif;
+    font-weight: normal;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: "clother", sans-serif;
+    background: #242424;
+    color: white;
+}
+
+header {
+    padding: 30px 40px 20px;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 42px;
+}
+
+header p {
+    margin-top: 8px;
+    color: #bdbdbd;
+}
+
+.garage {
+    padding: 20px 35px 45px;
+}
+
+.parking-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+}
+
+.spot {
+    position: relative;
+    min-height: 330px;
+    padding: 20px;
+    background: #333333;
+    text-decoration: none;
+    color: white;
+    overflow: hidden;
+}
+
+.spot::before,
+.spot::after {
+    content: "";
+    position: absolute;
+    top: 18px;
+    bottom: 18px;
+    width: 3px;
+    background: #f2f0dc;
+}
+
+.spot::before {
+    left: 10px;
+}
+
+.spot::after {
+    right: 10px;
+}
+
+.spot:hover {
+    background: #3d3d3d;
+}
+
+.car {
+    height: 225px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.car img {
+    max-width: 88%;
+    max-height: 100%;
+    display: block;
+}
+
+.car-name {
+    margin-top: 14px;
+}
+
+.car-name small {
+    display: block;
+    color: #aaa;
+    margin-bottom: 5px;
+    letter-spacing: 1px;
+}
+
+.car-name h2 {
+    margin: 0;
+    font-size: 20px;
+}
+
+.car-name p {
+    margin: 6px 0 0;
+    color: #d7c58f;
+}
+
+.detail {
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.detail-image {
+    background: #303030;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+}
+
+.detail-image img {
+    width: 75%;
+    max-width: 520px;
+    display: block;
+}
+
+.detail-info {
+    padding: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.back {
+    color: #d7c58f;
+    text-decoration: none;
+    margin-bottom: 25px;
+}
+
+.detail-info h1 {
+    margin: 0 0 8px;
+    font-size: 44px;
+}
+
+.detail-info > p {
+    color: #aaa;
+    margin-bottom: 30px;
+}
+
+.spec {
+    padding: 14px 0;
+    border-top: 1px solid #555;
+}
+
+.spec:last-child {
+    border-bottom: 1px solid #555;
+}
+
+.spec span {
+    display: block;
+    color: #aaa;
+    font-size: 12px;
+    margin-bottom: 5px;
+    letter-spacing: 1px;
+}
+
+.spec strong {
+    font-size: 20px;
+}
+
+@media (max-width: 900px) {
+    .parking-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .detail {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 600px) {
+    .parking-grid {
+        grid-template-columns: 1fr;
+    }
+
+    header,
+    .garage,
+    .detail-info {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+}
+
+    
+body {
+    transition: opacity 0.45s ease;
+}
+
+html.js body {
+    opacity: 0;
+}
+
+html.js body.page-loaded {
+    opacity: 1;
+}
+
+html.js body.page-exit {
+    opacity: 0;
+}
+
+</style>
+    <link rel="stylesheet" href="https://use.typekit.net/sbh1yxf.css">
+</head>
+
+<body>
+
+<main class="detail">
+
+    <section class="detail-image">
+        <img src="ALL CAR PNG/mercedes-slr-mclaren.png" alt="Mercedes-Benz SLR McLaren">
+    </section>
+
+    <section class="detail-info">
+        <a class="back" href="garageaswebsitefinal.html">← BACK TO GARAGE</a>
+
+        <h1>Mercedes-Benz SLR McLaren</h1>
+        <p>ANALOG GRAND TOURER MEMBER OF 2000S HOLY-TRINITY</p>
+
+        <div class="spec">
+            <span>ENGINE</span>
+            <strong>5,439 cc (5.4 Liters) Supercharged V8</strong>
+        </div>
+
+        <div class="spec">
+            <span>POWER</span>
+            <strong>626 PS</strong>
+        </div>
+
+        <div class="spec">
+            <span>0–100 KM/H</span>
+            <strong>3.8 sec</strong>
+        </div>
+
+        <div class="spec">
+            <span>TOP SPEED</span>
+            <strong>334 KM/H</strong>
+        </div>
+
+        <div class="spec">
+            <span>MODEL YEAR</span>
+            <strong>2005</strong>
+        </div>
+
+    </section>
+
+</main>
+
+<script>
+window.addEventListener("pageshow", function () {
+    document.body.classList.remove("page-exit");
+    document.body.classList.add("page-loaded");
+});
+
+document.querySelectorAll("a").forEach(function (link) {
+    link.addEventListener("click", function (event) {
+        event.preventDefault();
+
+        const nextPage = this.href;
+
+        document.body.classList.remove("page-loaded");
+        document.body.classList.add("page-exit");
+
+        setTimeout(function () {
+            window.location.href = nextPage;
+        }, 450);
+    });
+});
+</script>
+
+</body>
+</html>
